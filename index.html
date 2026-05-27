@@ -40,14 +40,14 @@ inset:0;
 
 background:
 linear-gradient(
-rgba(0,0,0,0.86),
-rgba(0,0,0,0.9)
+rgba(0,0,0,0.84),
+rgba(0,0,0,0.88)
 ),
 
 url('https://images.unsplash.com/photo-1604902396830-aca29e19b067?q=80&w=2200&auto=format&fit=crop');
 
 background-size:cover;
-background-position:center;
+background-position:center right;
 
 z-index:-5;
 
@@ -63,7 +63,7 @@ transform:scale(1.08);
 }
 }
 
-/* LIGHT EFFECT */
+/* GLOW */
 
 body::after{
 content:"";
@@ -105,7 +105,7 @@ letter-spacing:1px;
 opacity:0.7;
 }
 
-/* NAVBAR */
+/* NAV */
 
 nav{
 height:92px;
@@ -248,7 +248,7 @@ padding:0;
 width:100%;
 
 display:grid;
-grid-template-columns:1fr 1fr;
+grid-template-columns:720px 1fr;
 
 align-items:center;
 
@@ -292,12 +292,12 @@ margin-bottom:35px;
 
 .hero-logo{
 width:100%;
-max-width:420px;
+max-width:520px;
 
-margin-bottom:25px;
+margin-bottom:30px;
 
 filter:
-drop-shadow(0 0 40px rgba(216,169,109,0.16))
+drop-shadow(0 0 30px rgba(216,169,109,0.16))
 drop-shadow(0 20px 60px rgba(0,0,0,0.8));
 
 animation:logoFloat 7s ease-in-out infinite;
@@ -318,7 +318,7 @@ transform:translateY(-12px);
 .hero h1{
 font-family:'Cinzel',serif;
 
-font-size:5.5rem;
+font-size:5.7rem;
 line-height:0.95;
 
 margin-bottom:22px;
@@ -461,40 +461,7 @@ color:white;
 transform:translateY(-7px);
 }
 
-/* RIGHT SIDE */
-
-.hero-right{
-display:flex;
-justify-content:center;
-align-items:center;
-}
-
-.hero-side-logo{
-
-width:100%;
-max-width:780px;
-
-object-fit:contain;
-
-filter:
-drop-shadow(0 0 40px rgba(216,169,109,0.18))
-drop-shadow(0 30px 80px rgba(0,0,0,0.85));
-
-animation:floatImage 7s ease-in-out infinite;
-
-background:none;
-}
-
-@keyframes floatImage{
-0%,100%{
-transform:translateY(0px);
-}
-50%{
-transform:translateY(-10px);
-}
-}
-
-/* SOCIAL FLOAT */
+/* SIDE SOCIAL */
 
 .side-social{
 position:absolute;
@@ -513,8 +480,8 @@ z-index:20;
 
 .side-social a{
 
-width:58px;
-height:58px;
+width:54px;
+height:54px;
 
 display:flex;
 justify-content:center;
@@ -532,6 +499,9 @@ backdrop-filter:blur(14px);
 color:white;
 text-decoration:none;
 
+font-size:0.9rem;
+font-weight:700;
+
 transition:0.4s;
 }
 
@@ -548,7 +518,7 @@ var(--pink)
 
 }
 
-/* SECTIONS */
+/* SERVICES */
 
 section{
 padding:100px 6%;
@@ -581,7 +551,7 @@ transparent
 );
 }
 
-/* SERVICES */
+/* CARDS */
 
 .services{
 display:grid;
@@ -646,14 +616,14 @@ color:var(--pink);
 
 .gallery{
 display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
+grid-template-columns:repeat(6,1fr);
+gap:16px;
 }
 
 .gallery-item{
-height:320px;
+height:230px;
 overflow:hidden;
-border-radius:22px;
+border-radius:16px;
 position:relative;
 }
 
@@ -668,54 +638,35 @@ transition:0.8s;
 transform:scale(1.08);
 }
 
-/* INSTAGRAM FEED */
+/* FEATURES */
 
-.insta-feed{
-padding-top:40px;
-}
+.features{
+margin-top:60px;
 
-.insta-grid{
 display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px;
-margin-top:40px;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
 }
 
-.insta-grid img{
-width:100%;
-height:280px;
-object-fit:cover;
-border-radius:18px;
+.feature{
+background:rgba(255,255,255,0.03);
 
-transition:0.6s;
+border:1px solid rgba(216,169,109,0.12);
 
-border:1px solid rgba(255,255,255,0.05);
+padding:28px;
+border-radius:16px;
 }
 
-.insta-grid img:hover{
-transform:scale(1.04);
+.feature h4{
+font-family:'Cinzel',serif;
+color:var(--gold);
+margin-bottom:10px;
 }
 
-/* MAP */
-
-.map-section{
-padding-top:50px;
-}
-
-.map-box{
-overflow:hidden;
-border-radius:30px;
-border:1px solid rgba(216,169,109,0.15);
-
-box-shadow:
-0 30px 80px rgba(0,0,0,0.45);
-}
-
-.map-box iframe{
-width:100%;
-height:500px;
-border:none;
-filter:grayscale(1) invert(0.93) contrast(1.2);
+.feature p{
+font-size:0.9rem;
+opacity:0.75;
+line-height:1.7;
 }
 
 /* FOOTER */
@@ -739,15 +690,17 @@ opacity:0.65;
 
 .hero{
 grid-template-columns:1fr;
-gap:50px;
 }
 
 .services{
 grid-template-columns:repeat(2,1fr);
 }
 
-.gallery,
-.insta-grid{
+.gallery{
+grid-template-columns:repeat(2,1fr);
+}
+
+.features{
 grid-template-columns:repeat(2,1fr);
 }
 
@@ -787,18 +740,12 @@ flex-direction:column;
 
 .services,
 .gallery,
-.insta-grid{
+.features{
 grid-template-columns:1fr;
 }
 
 .side-social{
 display:none;
-}
-
-footer{
-flex-direction:column;
-gap:15px;
-text-align:center;
 }
 
 }
@@ -808,14 +755,16 @@ text-align:center;
 
 <body>
 
+<!-- TOPBAR -->
+
 <div class="topbar">
 
 <span>
-📍 25 RUE PASTEUR • SAINT-CÉRÉ
+📍 25 RUE PASTEUR, 46400 SAINT-CÉRÉ
 </span>
 
 <span>
-LUXURY NAILS STUDIO
+Institut de Beauté Premium
 </span>
 
 <span>
@@ -823,6 +772,8 @@ LUXURY NAILS STUDIO
 </span>
 
 </div>
+
+<!-- NAVBAR -->
 
 <nav>
 
@@ -840,9 +791,11 @@ LUXURY NAILS STUDIO
 
 <ul>
 <li><a href="#">ACCUEIL</a></li>
-<li><a href="#services">PRESTATIONS</a></li>
-<li><a href="#gallery">GALERIE</a></li>
-<li><a href="#map">LOCALISATION</a></li>
+<li><a href="#">PRESTATIONS</a></li>
+<li><a href="#">GALERIE</a></li>
+<li><a href="#">À PROPOS</a></li>
+<li><a href="#">AVIS</a></li>
+<li><a href="#">CONTACT</a></li>
 </ul>
 
 <div class="nav-right">
@@ -858,6 +811,8 @@ RÉSERVER
 </div>
 
 </nav>
+
+<!-- HERO -->
 
 <header>
 
@@ -895,54 +850,35 @@ Design élégant, atmosphère intime et prestations premium.
 PRENDRE RENDEZ-VOUS
 </a>
 
-<a href="#gallery" class="btn btn-secondary">
-VOIR LES CRÉATIONS
+<a href="#" class="btn btn-secondary">
+DÉCOUVRIR LES CRÉATIONS
 </a>
 
 </div>
 
 </div>
 
-<div class="hero-right">
-
-<img 
-src="https://i.postimg.cc/GmdmdmKx/Chat-GPT-Image-27-mai-2026-09-58-45.png"
-class="hero-side-logo"
->
-
-</div>
+<div class="hero-right"></div>
 
 </div>
 
 <div class="side-social">
 
-<a 
-href="https://www.instagram.com/rose_et_paillettes46?igsh=MXIxcW13ZDRtc3Z0Nw==" 
-target="_blank"
->
-
-<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
-<path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.087 3.269.222 2.76.42a5.9 5.9 0 0 0-2.14 1.4A5.9 5.9 0 0 0 .42 3.96C.222 4.47.087 5.05.048 5.903.01 6.756 0 7.029 0 9.2s.01 2.444.048 3.297c.039.853.174 1.434.372 1.943a5.9 5.9 0 0 0 1.4 2.14 5.9 5.9 0 0 0 2.14 1.4c.509.198 1.09.333 1.943.372C5.556 15.99 5.829 16 8 16s2.444-.01 3.297-.048c.853-.039 1.434-.174 1.943-.372a5.9 5.9 0 0 0 2.14-1.4 5.9 5.9 0 0 0 1.4-2.14c.198-.509.333-1.09.372-1.943C15.99 11.644 16 11.371 16 9.2s-.01-2.444-.048-3.297c-.039-.853-.174-1.434-.372-1.943a5.9 5.9 0 0 0-1.4-2.14 5.9 5.9 0 0 0-2.14-1.4c-.509-.198-1.09-.333-1.943-.372C10.444.01 10.171 0 8 0z"/>
-</svg>
-
+<a href="#">
+IG
 </a>
 
-<a 
-href="https://www.facebook.com/share/18dadt1rw9/" 
-target="_blank"
->
-
-<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
-<path d="M16 8.049C16 3.603 12.418 0 8 0S0 3.603 0 8.049c0 4.017 2.926 7.347 6.75 7.951v-5.625H4.719V8.049H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.994 0-1.304.621-1.304 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-</svg>
-
+<a href="#">
+FB
 </a>
 
 </div>
 
 </header>
 
-<section id="services">
+<!-- SERVICES -->
+
+<section>
 
 <div class="section-title">
 
@@ -955,45 +891,82 @@ target="_blank"
 <div class="services">
 
 <div class="service-card">
+
 <div class="service-icon">💅</div>
+
 <h3>SEMI-PERMANENT</h3>
-<p>Pose brillante et naturelle pour des ongles parfaits.</p>
+
+<p>
+Pose brillante et naturelle pour des ongles parfaits.
+</p>
+
 <div class="price">35€</div>
+
 </div>
 
 <div class="service-card">
+
 <div class="service-icon">✨</div>
+
 <h3>POSE GEL</h3>
-<p>Finition parfaite et tenue longue durée.</p>
+
+<p>
+Finition parfaite et tenue longue durée.
+</p>
+
 <div class="price">45€</div>
+
 </div>
 
 <div class="service-card">
+
 <div class="service-icon">🖤</div>
+
 <h3>CHABLON</h3>
-<p>Rallongement élégant et sur mesure.</p>
+
+<p>
+Rallongement élégant et sur mesure.
+</p>
+
 <div class="price">55€</div>
+
 </div>
 
 <div class="service-card">
+
 <div class="service-icon">💎</div>
+
 <h3>NAIL ART</h3>
-<p>Créations personnalisées faites avec passion.</p>
+
+<p>
+Créations personnalisées faites avec passion.
+</p>
+
 <div class="price">SUR DEVIS</div>
+
 </div>
 
 <div class="service-card">
+
 <div class="service-icon">🌸</div>
+
 <h3>MANUCURE PREMIUM</h3>
-<p>Soin complet des mains et finitions luxueuses.</p>
+
+<p>
+Soin complet des mains et finitions luxueuses.
+</p>
+
 <div class="price">À PARTIR DE 40€</div>
+
 </div>
 
 </div>
 
 </section>
 
-<section id="gallery">
+<!-- GALLERY -->
+
+<section>
 
 <div class="section-title">
 
@@ -1017,59 +990,55 @@ target="_blank"
 <img src="https://i.postimg.cc/8PWYZnkv/Pose-de-Noel-Gainage-sur-ongles-naturels-effet-pull-et-flocons-effetpull-nailsfl.webp">
 </div>
 
-</div>
-
-</section>
-
-<section class="insta-feed">
-
-<div class="section-title">
-
-<h2>NOS DERNIÈRES CRÉATIONS</h2>
-
-<div class="section-line"></div>
-
-</div>
-
-<div class="insta-grid">
-
-<img src="https://i.postimg.cc/bvsmbG46/629979650-17999852282902754-7582938986735751047-n.jpg">
-
-<img src="https://i.postimg.cc/28QqFvMS/Pose-de-semi-permanent-avec-paillettes-rose-semipermanent-blanc-rose-paillettes-prothe-(1).webp">
-
-<img src="https://i.postimg.cc/8PWYZnkv/Pose-de-Noel-Gainage-sur-ongles-naturels-effet-pull-et-flocons-effetpull-nailsfl.webp">
-
-<img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=1200&auto=format&fit=crop">
-
+<div class="gallery-item">
 <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=1200&auto=format&fit=crop">
+</div>
 
-<img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=1200&auto=format&fit=crop">
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=1200&auto=format&fit=crop">
+</div>
+
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1604902396830-aca29e19b067?q=80&w=1200&auto=format&fit=crop">
+</div>
+
+</div>
+
+<div class="features">
+
+<div class="feature">
+<h4>PRODUITS PREMIUM</h4>
+<p>
+Sélection rigoureuse des meilleures marques.
+</p>
+</div>
+
+<div class="feature">
+<h4>HYGIÈNE & SÉCURITÉ</h4>
+<p>
+Matériel stérilisé et normes d'hygiène strictes.
+</p>
+</div>
+
+<div class="feature">
+<h4>SUR-MESURE</h4>
+<p>
+Chaque cliente est unique, chaque pose aussi.
+</p>
+</div>
+
+<div class="feature">
+<h4>RAPPEL RENDEZ-VOUS</h4>
+<p>
+Notification automatique avant votre rendez-vous.
+</p>
+</div>
 
 </div>
 
 </section>
 
-<section id="map" class="map-section">
-
-<div class="section-title">
-
-<h2>NOUS TROUVER</h2>
-
-<div class="section-line"></div>
-
-</div>
-
-<div class="map-box">
-
-<iframe
-src="https://www.google.com/maps?q=25+rue+Pasteur+Saint-Céré&output=embed"
-allowfullscreen=""
-loading="lazy">
-</iframe>
-
-</div>
-
-</section>
+<!-- FOOTER -->
 
 <footer>
 
@@ -1078,11 +1047,11 @@ loading="lazy">
 </div>
 
 <div>
-Luxury Nails Studio
+Institut de beauté à Saint-Céré
 </div>
 
 <div>
-Saint-Céré
+Mentions légales
 </div>
 
 </footer>
