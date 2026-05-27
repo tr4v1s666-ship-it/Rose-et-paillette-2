@@ -15,7 +15,6 @@
 --gold:#d9ab73;
 --pink:#ef9fb3;
 --dark:#050507;
---dark2:#0b0b10;
 }
 
 *{
@@ -40,12 +39,12 @@ position:fixed;
 inset:0;
 background:
 linear-gradient(
-rgba(0,0,0,0.68),
+rgba(0,0,0,0.65),
 rgba(0,0,0,0.78)
 ),
 url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=2200&auto=format&fit=crop');
 background-size:cover;
-background-position:center center;
+background-position:center;
 z-index:-5;
 animation:bgZoom 20s ease-in-out infinite alternate;
 }
@@ -55,14 +54,12 @@ animation:bgZoom 20s ease-in-out infinite alternate;
 100%{ transform:scale(1.08); }
 }
 
-/* LIGHT EFFECT */
-
 body::after{
 content:"";
 position:fixed;
 inset:0;
 background:
-radial-gradient(circle at 20% 30%, rgba(216,169,109,0.16), transparent 30%),
+radial-gradient(circle at 20% 30%, rgba(216,169,109,0.15), transparent 30%),
 radial-gradient(circle at 80% 20%, rgba(239,159,179,0.12), transparent 25%);
 pointer-events:none;
 z-index:-4;
@@ -100,11 +97,6 @@ z-index:999;
 background:rgba(0,0,0,0.55);
 backdrop-filter:blur(18px);
 border-bottom:1px solid rgba(255,255,255,0.05);
-}
-
-.logo-wrap{
-display:flex;
-flex-direction:column;
 }
 
 .logo{
@@ -200,7 +192,6 @@ display:flex;
 align-items:center;
 position:relative;
 overflow:hidden;
-padding:0;
 }
 
 .hero{
@@ -210,15 +201,12 @@ grid-template-columns:1fr 1fr;
 align-items:center;
 gap:60px;
 padding:120px 7% 80px;
-position:relative;
-z-index:5;
 }
 
 /* LEFT */
 
 .hero-left{
 max-width:720px;
-position:relative;
 }
 
 .hero-mini{
@@ -238,8 +226,8 @@ margin-bottom:35px;
 
 .hero-logo{
 width:100%;
-max-width:540px;
-margin-bottom:20px;
+max-width:520px;
+margin-bottom:25px;
 filter:
 drop-shadow(0 0 30px rgba(216,169,109,0.16))
 drop-shadow(0 20px 60px rgba(0,0,0,0.8));
@@ -253,11 +241,10 @@ animation:logoFloat 7s ease-in-out infinite;
 
 .hero h1{
 font-family:'Cinzel',serif;
-font-size:5.4rem;
+font-size:5.2rem;
 line-height:0.95;
 margin-bottom:22px;
 font-weight:600;
-letter-spacing:2px;
 }
 
 .hero h1 span{
@@ -304,23 +291,22 @@ margin-bottom:42px;
 /* RIGHT IMAGE */
 
 .hero-right{
-    width:100%;
-    height:760px;
-    border-radius:35px;
-    overflow:hidden;
-    position:relative;
-    background:
-    linear-gradient(
-        rgba(0,0,0,0.15),
-        rgba(0,0,0,0.25)
-    ),
-    url('https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=1600&auto=format&fit=crop');
-    background-size:cover;
-    background-position:center;
-    box-shadow:
-    0 30px 80px rgba(0,0,0,0.45),
-    0 0 60px rgba(216,169,109,0.12);
-    border:1px solid rgba(255,255,255,0.08);
+width:100%;
+height:760px;
+border-radius:35px;
+overflow:hidden;
+background:
+linear-gradient(
+rgba(0,0,0,0.15),
+rgba(0,0,0,0.25)
+),
+url('https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=1600&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+box-shadow:
+0 30px 80px rgba(0,0,0,0.55),
+0 0 60px rgba(216,169,109,0.12);
+border:1px solid rgba(255,255,255,0.08);
 }
 
 /* BUTTONS */
@@ -372,9 +358,6 @@ linear-gradient(
 #f6c3cb
 );
 color:white;
-box-shadow:
-0 18px 45px rgba(239,159,179,0.25),
-0 0 30px rgba(239,159,179,0.12);
 }
 
 .btn-secondary{
@@ -426,7 +409,7 @@ var(--pink)
 );
 }
 
-/* SECTION */
+/* SECTIONS */
 
 section{
 padding:100px 6%;
@@ -484,7 +467,6 @@ backdrop-filter:blur(10px);
 .service-card:hover{
 transform:translateY(-8px);
 border-color:rgba(239,159,179,0.35);
-background:rgba(255,255,255,0.05);
 }
 
 .service-icon{
@@ -503,7 +485,6 @@ color:var(--gold);
 font-size:0.88rem;
 line-height:1.7;
 opacity:0.75;
-min-height:55px;
 }
 
 .price{
@@ -522,18 +503,16 @@ gap:20px;
 }
 
 .gallery-item{
-    height:220px;
-    overflow:hidden;
-    border-radius:20px;
-    position:relative;
+height:320px;
+overflow:hidden;
+border-radius:20px;
 }
 
 .gallery-item img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:0.5s;
-    filter:brightness(1.05);
+width:100%;
+height:100%;
+object-fit:cover;
+transition:0.8s;
 }
 
 .gallery-item:hover img{
@@ -581,7 +560,7 @@ grid-template-columns:1fr;
 height:500px;
 }
 
-.services
+.services{
 grid-template-columns:repeat(2,1fr);
 }
 
@@ -661,28 +640,31 @@ text-align:center;
 
 <nav>
 
-<div class="logo-wrap">
+<div>
 <div class="logo">ROSE & PAILLETTES</div>
 <div class="logo-sub">LUXURY NAILS STUDIO</div>
 </div>
 
 <ul>
-<li><a href="#">ACCUEIL</a></li>
-<li><a href="#">PRESTATIONS</a></li>
-<li><a href="#">GALERIE</a></li>
-<li><a href="#">CONTACT</a></li>
+<li><a href="#accueil">ACCUEIL</a></li>
+<li><a href="#prestations">PRESTATIONS</a></li>
+<li><a href="#galerie">GALERIE</a></li>
+<li><a href="#contact">CONTACT</a></li>
 </ul>
 
 <div class="nav-right">
 <div class="phone">06 88 10 37 83</div>
-<a href="#" class="reserve-btn">RÉSERVER</a>
+
+<a href="#contact" class="reserve-btn">
+RÉSERVER
+</a>
 </div>
 
 </nav>
 
 <!-- HERO -->
 
-<header>
+<header id="accueil">
 
 <div class="hero">
 
@@ -711,13 +693,15 @@ Design élégant, ambiance luxe et prestations premium.
 </p>
 
 <div class="hero-buttons">
-<a href="#" class="btn btn-primary">
+
+<a href="#contact" class="btn btn-primary">
 PRENDRE RENDEZ-VOUS
 </a>
 
 <a href="#galerie" class="btn btn-secondary">
 DÉCOUVRIR LES CRÉATIONS
 </a>
+
 </div>
 
 </div>
@@ -744,7 +728,7 @@ DÉCOUVRIR LES CRÉATIONS
 
 <!-- SERVICES -->
 
-<section>
+<section id="prestations">
 
 <div class="section-title">
 <h2>NOS PRESTATIONS</h2>
@@ -817,7 +801,16 @@ DÉCOUVRIR LES CRÉATIONS
 
 </div>
 
-<!-- GOOGLE MAP -->
+</section>
+
+<!-- CONTACT / MAP -->
+
+<section id="contact">
+
+<div class="section-title">
+<h2>NOUS TROUVER</h2>
+<div class="section-line"></div>
+</div>
 
 <div class="map-container">
 
