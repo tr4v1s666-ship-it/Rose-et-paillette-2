@@ -310,11 +310,11 @@ margin-bottom:42px;
     overflow:hidden;
     position:relative;
     background:
-linear-gradient(
-    rgba(0,0,0,0.15),
-    rgba(0,0,0,0.25)
-),
-url('https://i.postimg.cc/0QjvKZzM/manucure-prestige-luxe.jpg');
+    linear-gradient(
+        rgba(0,0,0,0.15),
+        rgba(0,0,0,0.25)
+    ),
+    url('https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=1600&auto=format&fit=crop');
     background-size:cover;
     background-position:center;
     box-shadow:
@@ -322,7 +322,6 @@ url('https://i.postimg.cc/0QjvKZzM/manucure-prestige-luxe.jpg');
     0 0 60px rgba(216,169,109,0.12);
     border:1px solid rgba(255,255,255,0.08);
 }
-
 
 /* BUTTONS */
 
@@ -523,17 +522,18 @@ gap:20px;
 }
 
 .gallery-item{
-height:320px;
-overflow:hidden;
-border-radius:20px;
-position:relative;
+    height:220px;
+    overflow:hidden;
+    border-radius:20px;
+    position:relative;
 }
 
 .gallery-item img{
-width:100%;
-height:100%;
-object-fit:cover;
-transition:0.8s;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.5s;
+    filter:brightness(1.05);
 }
 
 .gallery-item:hover img{
@@ -581,7 +581,7 @@ grid-template-columns:1fr;
 height:500px;
 }
 
-.services{
+.services
 grid-template-columns:repeat(2,1fr);
 }
 
