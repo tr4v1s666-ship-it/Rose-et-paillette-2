@@ -292,9 +292,9 @@ margin-bottom:35px;
 
 .hero-logo{
 width:100%;
-max-width:520px;
+max-width:240px;
 
-margin-bottom:30px;
+margin-bottom:25px;
 
 filter:
 drop-shadow(0 0 30px rgba(216,169,109,0.16))
@@ -318,7 +318,7 @@ transform:translateY(-12px);
 .hero h1{
 font-family:'Cinzel',serif;
 
-font-size:5.7rem;
+font-size:5.5rem;
 line-height:0.95;
 
 margin-bottom:22px;
@@ -461,7 +461,36 @@ color:white;
 transform:translateY(-7px);
 }
 
-/* SIDE SOCIAL */
+/* RIGHT IMAGE */
+
+.hero-right{
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.hero-right img{
+width:100%;
+max-width:760px;
+border-radius:30px;
+
+box-shadow:
+0 40px 90px rgba(0,0,0,0.7),
+0 0 80px rgba(216,169,109,0.08);
+
+animation:floatImage 7s ease-in-out infinite;
+}
+
+@keyframes floatImage{
+0%,100%{
+transform:translateY(0px);
+}
+50%{
+transform:translateY(-10px);
+}
+}
+
+/* SOCIAL */
 
 .side-social{
 position:absolute;
@@ -518,7 +547,7 @@ var(--pink)
 
 }
 
-/* SERVICES */
+/* SECTIONS */
 
 section{
 padding:100px 6%;
@@ -551,7 +580,7 @@ transparent
 );
 }
 
-/* CARDS */
+/* SERVICES */
 
 .services{
 display:grid;
@@ -616,14 +645,14 @@ color:var(--pink);
 
 .gallery{
 display:grid;
-grid-template-columns:repeat(6,1fr);
-gap:16px;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
 }
 
 .gallery-item{
-height:230px;
+height:300px;
 overflow:hidden;
-border-radius:16px;
+border-radius:20px;
 position:relative;
 }
 
@@ -638,35 +667,86 @@ transition:0.8s;
 transform:scale(1.08);
 }
 
-/* FEATURES */
+/* MAP */
 
-.features{
-margin-top:60px;
+.map-section{
+padding-top:50px;
+}
 
+.map-box{
+overflow:hidden;
+border-radius:30px;
+border:1px solid rgba(216,169,109,0.15);
+
+box-shadow:
+0 30px 80px rgba(0,0,0,0.45);
+}
+
+.map-box iframe{
+width:100%;
+height:500px;
+border:none;
+filter:grayscale(1) invert(0.93) contrast(1.2);
+}
+
+/* SOCIAL GRID */
+
+.social-grid{
 display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
+grid-template-columns:repeat(2,1fr);
+gap:25px;
+margin-top:40px;
 }
 
-.feature{
-background:rgba(255,255,255,0.03);
+.social-card{
+background:
+linear-gradient(
+180deg,
+rgba(255,255,255,0.04),
+rgba(255,255,255,0.02)
+);
 
-border:1px solid rgba(216,169,109,0.12);
+border:1px solid rgba(216,169,109,0.15);
 
-padding:28px;
-border-radius:16px;
+padding:40px;
+border-radius:24px;
+text-align:center;
 }
 
-.feature h4{
+.social-card h3{
 font-family:'Cinzel',serif;
+font-size:1.8rem;
+margin-bottom:18px;
 color:var(--gold);
-margin-bottom:10px;
 }
 
-.feature p{
-font-size:0.9rem;
+.social-card p{
 opacity:0.75;
-line-height:1.7;
+line-height:1.8;
+margin-bottom:30px;
+}
+
+.social-btn{
+display:inline-block;
+padding:18px 34px;
+border-radius:14px;
+text-decoration:none;
+color:white;
+font-weight:700;
+letter-spacing:1px;
+transition:0.4s;
+}
+
+.instagram-btn{
+background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+}
+
+.facebook-btn{
+background:linear-gradient(135deg,#1877f2,#4f8cff);
+}
+
+.social-btn:hover{
+transform:translateY(-5px);
 }
 
 /* FOOTER */
@@ -690,6 +770,7 @@ opacity:0.65;
 
 .hero{
 grid-template-columns:1fr;
+gap:50px;
 }
 
 .services{
@@ -700,8 +781,8 @@ grid-template-columns:repeat(2,1fr);
 grid-template-columns:repeat(2,1fr);
 }
 
-.features{
-grid-template-columns:repeat(2,1fr);
+.social-grid{
+grid-template-columns:1fr;
 }
 
 }
@@ -739,13 +820,18 @@ flex-direction:column;
 }
 
 .services,
-.gallery,
-.features{
+.gallery{
 grid-template-columns:1fr;
 }
 
 .side-social{
 display:none;
+}
+
+footer{
+flex-direction:column;
+gap:15px;
+text-align:center;
 }
 
 }
@@ -754,8 +840,6 @@ display:none;
 </head>
 
 <body>
-
-<!-- TOPBAR -->
 
 <div class="topbar">
 
@@ -773,8 +857,6 @@ Institut de Beauté Premium
 
 </div>
 
-<!-- NAVBAR -->
-
 <nav>
 
 <div class="logo-wrap">
@@ -791,11 +873,10 @@ LUXURY NAILS STUDIO
 
 <ul>
 <li><a href="#">ACCUEIL</a></li>
-<li><a href="#">PRESTATIONS</a></li>
-<li><a href="#">GALERIE</a></li>
-<li><a href="#">À PROPOS</a></li>
-<li><a href="#">AVIS</a></li>
-<li><a href="#">CONTACT</a></li>
+<li><a href="#services">PRESTATIONS</a></li>
+<li><a href="#gallery">GALERIE</a></li>
+<li><a href="#map">LOCALISATION</a></li>
+<li><a href="#socials">RÉSEAUX</a></li>
 </ul>
 
 <div class="nav-right">
@@ -811,8 +892,6 @@ RÉSERVER
 </div>
 
 </nav>
-
-<!-- HERO -->
 
 <header>
 
@@ -850,7 +929,7 @@ Design élégant, atmosphère intime et prestations premium.
 PRENDRE RENDEZ-VOUS
 </a>
 
-<a href="#" class="btn btn-secondary">
+<a href="#gallery" class="btn btn-secondary">
 DÉCOUVRIR LES CRÉATIONS
 </a>
 
@@ -858,17 +937,21 @@ DÉCOUVRIR LES CRÉATIONS
 
 </div>
 
-<div class="hero-right"></div>
+<div class="hero-right">
+
+<img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=1400&auto=format&fit=crop">
+
+</div>
 
 </div>
 
 <div class="side-social">
 
-<a href="#">
+<a href="https://www.instagram.com/rose_et_paillettes46?igsh=MXIxcW13ZDRtc3Z0Nw==" target="_blank">
 IG
 </a>
 
-<a href="#">
+<a href="https://www.facebook.com/share/18dadt1rw9/" target="_blank">
 FB
 </a>
 
@@ -876,9 +959,7 @@ FB
 
 </header>
 
-<!-- SERVICES -->
-
-<section>
+<section id="services">
 
 <div class="section-title">
 
@@ -964,13 +1045,11 @@ Soin complet des mains et finitions luxueuses.
 
 </section>
 
-<!-- GALLERY -->
-
-<section>
+<section id="gallery">
 
 <div class="section-title">
 
-<h2>GALERIE</h2>
+<h2>GALERIE INSTAGRAM</h2>
 
 <div class="section-line"></div>
 
@@ -991,11 +1070,11 @@ Soin complet des mains et finitions luxueuses.
 </div>
 
 <div class="gallery-item">
-<img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=1200&auto=format&fit=crop">
 </div>
 
 <div class="gallery-item">
-<img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=1200&auto=format&fit=crop">
 </div>
 
 <div class="gallery-item">
@@ -1004,41 +1083,81 @@ Soin complet des mains et finitions luxueuses.
 
 </div>
 
-<div class="features">
+</section>
 
-<div class="feature">
-<h4>PRODUITS PREMIUM</h4>
-<p>
-Sélection rigoureuse des meilleures marques.
-</p>
+<section id="map" class="map-section">
+
+<div class="section-title">
+
+<h2>NOUS TROUVER</h2>
+
+<div class="section-line"></div>
+
 </div>
 
-<div class="feature">
-<h4>HYGIÈNE & SÉCURITÉ</h4>
-<p>
-Matériel stérilisé et normes d'hygiène strictes.
-</p>
-</div>
+<div class="map-box">
 
-<div class="feature">
-<h4>SUR-MESURE</h4>
-<p>
-Chaque cliente est unique, chaque pose aussi.
-</p>
-</div>
-
-<div class="feature">
-<h4>RAPPEL RENDEZ-VOUS</h4>
-<p>
-Notification automatique avant votre rendez-vous.
-</p>
-</div>
+<iframe
+src="https://www.google.com/maps?q=25+rue+Pasteur+Saint-Céré&output=embed"
+allowfullscreen=""
+loading="lazy">
+</iframe>
 
 </div>
 
 </section>
 
-<!-- FOOTER -->
+<section id="socials">
+
+<div class="section-title">
+
+<h2>NOS RÉSEAUX</h2>
+
+<div class="section-line"></div>
+
+</div>
+
+<div class="social-grid">
+
+<div class="social-card">
+
+<h3>Instagram</h3>
+
+<p>
+Découvrez toutes nos créations, nouveautés et inspirations nail art directement sur Instagram.
+</p>
+
+<a 
+href="https://www.instagram.com/rose_et_paillettes46?igsh=MXIxcW13ZDRtc3Z0Nw==" 
+target="_blank"
+class="social-btn instagram-btn"
+>
+VOIR INSTAGRAM
+</a>
+
+</div>
+
+<div class="social-card">
+
+<h3>Facebook</h3>
+
+<p>
+Retrouvez les avis clientes, actualités et photos de l’institut sur Facebook.
+</p>
+
+<a 
+href="https://www.facebook.com/share/18dadt1rw9/" 
+target="_blank"
+class="social-btn facebook-btn"
+>
+VOIR FACEBOOK
+</a>
+
+</div>
+
+</div>
+
+</section>
 
 <footer>
 
@@ -1051,7 +1170,7 @@ Institut de beauté à Saint-Céré
 </div>
 
 <div>
-Mentions légales
+Luxury Nails Studio
 </div>
 
 </footer>
