@@ -44,10 +44,11 @@ body::before{
 
     background:
     linear-gradient(
-        rgba(255,255,255,0.35),
-        rgba(255,255,255,0.45)
+        rgba(0,0,0,0.84),
+        rgba(0,0,0,0.90)
     ),
-    url('https://images.unsplash.com/photo-1607082349566-187342175e2f?q=80&w=2200&auto=format&fit=crop');
+
+    url('https://images.unsplash.com/photo-1604902396830-aca29e19b067?q=80&w=2200&auto=format&fit=crop');
 
     background-size:cover;
     background-position:center;
@@ -55,7 +56,6 @@ body::before{
 
     animation:bgZoom 20s ease-in-out infinite alternate;
 }
-
 
 @keyframes bgZoom{
     0%{ transform:scale(1.03); }
@@ -70,8 +70,8 @@ body::after{
     inset:0;
 
     background:
-    radial-gradient(circle at 20% 30%, rgba(255,200,180,0.25), transparent 40%),
-    radial-gradient(circle at 80% 20%, rgba(255,170,200,0.18), transparent 35%);
+    radial-gradient(circle at 20% 30%, rgba(216,169,109,0.12), transparent 30%),
+    radial-gradient(circle at 80% 20%, rgba(239,159,179,0.08), transparent 25%);
 
     pointer-events:none;
     z-index:-4;
